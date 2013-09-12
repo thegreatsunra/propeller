@@ -30,6 +30,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Define handlebars helpers
 // these should really go in a helper.js
+
+// blocks and extends
 var blocks = {};
 
 hbs.registerHelper('extend', function(name, context) {
@@ -48,6 +50,9 @@ hbs.registerHelper('block', function(name) {
     blocks[name] = [];
     return val;
 });
+
+// partials
+hbs.registerPartials(__dirname + '/views/partials');
 
 
 // development only

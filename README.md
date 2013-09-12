@@ -3,9 +3,11 @@
 ## Quick Start
 
 1. Download and install [Node](http://nodejs.org)
+1. At the command line install [Bower](http://bower.io), [Grunt](http://gruntjs.com) and [Nodemon](https://github.com/remy/nodemon) by typing `sudo npm install -g bower grunt-cli nodemon`
 1. Download and unzip the Express Prototyper
-1. Open the unzipped folder at the command line and type `npm install` to install dependencies
-1. Type `node app` to start the server
+1. Open the unzipped folder at the command line
+1. Type `npm install && bower install` to install all dependencies
+1. Type `grunt` to start the server
 
 ## License
 

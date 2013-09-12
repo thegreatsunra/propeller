@@ -8,14 +8,16 @@ var routes = require('./routes');
 var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
+var hbs = require('hbs');
 
 var app = express();
 
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
-app.set('view engine', 'html.hbs');
-app.engine('html.hbs', require('hbs').__express);
+app.set('view engine', 'hbs');
+app.set('views', __dirname + '/views');
+app.engine('hbs', require('hbs').__express);
 app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
@@ -25,6 +27,28 @@ app.use(express.session());
 app.use(app.router);
 app.use(require('less-middleware')({ src: __dirname + '/public' }));
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Define handlebars helpers
+// these should really go in a helper.js
+var blocks = {};
+
+hbs.registerHelper('extend', function(name, context) {
+    var block = blocks[name];
+    if (!block) {
+        block = blocks[name] = [];
+    }
+
+    block.push(context.fn(this)); // for older versions of handlebars, use block.push(context(this));
+});
+
+hbs.registerHelper('block', function(name) {
+    var val = (blocks[name] || []).join('\n');
+
+    // clear the block
+    blocks[name] = [];
+    return val;
+});
+
 
 // development only
 if ('development' == app.get('env')) {

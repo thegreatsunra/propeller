@@ -1,0 +1,69 @@
+# ================
+# Node
+# ================
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+
+pids
+logs
+results
+
+npm-debug.log
+node_modules
+
+
+# ================
+# SublimeText
+# ================
+*.sublime-workspace
+
+
+# ================
+# TextMate
+# ================
+*.tmproj
+*.tmproject
+tmtags
+
+
+# ================
+# OS X
+# ================
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+# Thumbnails
+._*
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+
+# ================
+# LINUX
+# ================
+.*
+!.gitignore
+*~
+
+
+# ================
+# WINDOWS
+# ================
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/

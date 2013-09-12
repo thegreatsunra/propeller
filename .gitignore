@@ -19,6 +19,12 @@ node_modules
 
 
 # ================
+# Bower
+# ================
+bower_components
+
+
+# ================
 # SublimeText
 # ================
 *.sublime-workspace
@@ -50,7 +56,7 @@ Icon
 # ================
 # LINUX
 # ================
-.*
+# .*
 !.gitignore
 *~
 

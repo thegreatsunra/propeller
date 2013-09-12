@@ -1,0 +1,21 @@
+{
+  "name": "express-prototyper",
+  "version": "0.0.1",
+  "homepage": "https://github.com/thegreatsunra/express-prototyper",
+  "authors": [
+    "Dane Petersen"
+  ],
+  "description": "Lightweight Prototyping Tool in Express",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.0.0"
+  }
+}

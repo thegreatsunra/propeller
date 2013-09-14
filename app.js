@@ -3,12 +3,15 @@
  * Module dependencies.
  */
 
-var express = require('express');
-var routes = require('./routes');
-var user = require('./routes/user');
-var http = require('http');
-var path = require('path');
-var hbs = require('hbs');
+var express = require('express')
+  , http = require('http')
+  , path = require('path')
+  , hbs = require('hbs')
+  , fs = require('fs')
+  , routes = require('./routes')
+  , helpers = require('./helpers')
+  // , models = require('./models')
+  , app = express();
 
 var app = express();
 

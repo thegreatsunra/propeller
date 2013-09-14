@@ -4,6 +4,23 @@
 
 <h1>This is the home screen.</h1>
 
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Company</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each context.people}}
+      <tr>
+        <td>{{first_name}} {{last_name}}</td>
+        <td>{{company}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+
 {{#extend "scripts"}}
   {{>scripts}}
 {{/extend}}

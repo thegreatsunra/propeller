@@ -10,7 +10,7 @@ var express = require('express')
   , fs = require('fs')
   , routes = require('./routes')
   , helpers = require('./helpers')
-  // , models = require('./models')
+  , models = require('./models')
   , app = express();
 
 // partials

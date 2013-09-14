@@ -21,7 +21,7 @@ node_modules
 # ================
 # Bower
 # ================
-bower_components
+public/bower_components
 
 
 # ================

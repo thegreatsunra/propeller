@@ -13,7 +13,8 @@ var express = require('express')
   // , models = require('./models')
   , app = express();
 
-var app = express();
+// partials
+hbs.registerPartials(__dirname + '/views/partials');
 
 // all environments
 app.set('port', process.env.PORT || 3000);
@@ -28,33 +29,7 @@ app.use(express.session());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Define handlebars helpers
-// these should really go in a helper.js
-
-// blocks and extends
-var blocks = {};
-
-hbs.registerHelper('extend', function(name, context) {
-    var block = blocks[name];
-    if (!block) {
-        block = blocks[name] = [];
-    }
-
-    block.push(context.fn(this)); // for older versions of handlebars, use block.push(context(this));
-});
-
-hbs.registerHelper('block', function(name) {
-    var val = (blocks[name] || []).join('\n');
-
-    // clear the block
-    blocks[name] = [];
-    return val;
-});
-
 // partials
-hbs.registerPartials(__dirname + '/views/partials');
-
-
 // development only
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());

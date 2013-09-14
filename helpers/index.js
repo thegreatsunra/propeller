@@ -11,7 +11,7 @@ hbs.registerHelper('extend', function(name, context) {
     block = blocks[name] = [];
   }
 
-  block.push(context.fn(this)); // for older versions of handlebars, use block.push(context(this));
+  block.push(context.fn(this));
 });
 
 hbs.registerHelper('block', function(name) {

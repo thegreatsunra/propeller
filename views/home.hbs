@@ -2,7 +2,12 @@
   {{>_styles}}
 {{/extend}}
 
-<h1>This is the home screen.</h1>
+<h1>Hello, <span data-bind="text: fullName"> </span>!</h1>
+
+<p>First name: <input data-bind="value: firstName" /></p>
+<p>Last name: <input data-bind="value: lastName" /></p>
+
+<hr>
 
 <table class="table table-striped">
   <thead>

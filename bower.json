@@ -18,5 +18,6 @@
   "dependencies": {
     "bootstrap": "~3.0.0",
     "knockoutjs": "~2.3.0",
+    "requirejs": "~2.1.8"
   }
 }

@@ -52,7 +52,12 @@
     <div class="container">
       
 
-<h1>This is the home screen.</h1>
+<h1>Hello, <span data-bind="text: fullName"> </span>!</h1>
+
+<p>First name: <input data-bind="value: firstName" /></p>
+<p>Last name: <input data-bind="value: lastName" /></p>
+
+<hr>
 
 <table class="table table-striped">
   <thead>
@@ -86,17 +91,36 @@
   </tbody>
 </table>
 
+<!-- Button trigger modal -->
+<p><a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Launch demo modal</a></p>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        Modal body.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 
 
       <p class="lead"></p>
     </div><!-- /.container -->
 
+    <!-- All JavaScript via RequireJS -->
+    <script data-main="js/require.config.js" src="bower_components/requirejs/require.js"></script>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="bower_components/bootstrap/assets/js/jquery.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     
   <script src="js/scripts.js"></script>
 

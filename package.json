@@ -9,7 +9,8 @@
     "express": "~3.4.0",
     "hbs": "~2.4.0",
     "underscore": "~1.5.2",
-    "request": "~2.27.0"
+    "request": "~2.27.0",
+    "csvtojson": "~0.1.4"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

@@ -17,10 +17,27 @@
     </tr>
   </thead>
   <tbody>
-    {{#each context.people}}
+    {{#each context.people.csvRows}}
       <tr>
         <td>{{first_name}} {{last_name}}</td>
         <td>{{company}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>City</th>
+      <th>Country</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each context.places.csvRows}}
+      <tr>
+        <td>{{city}}</td>
+        <td>{{country}}</td>
       </tr>
     {{/each}}
   </tbody>

@@ -1,41 +1,18 @@
-var fs = require('fs');
+var fs = require('fs')
+  , util = require('util')
+  , Converter=require("csvtojson").core.Converter;
 
-//Converter Class
-var Converter=require("csvtojson").core.Converter;
-//CSV File Path or CSV String or Readable Stream Object
-var csvFileName="./public/data/people.csv";
-//new converter instance
-var csvConverter=new Converter();
-//end_parsed will be emitted once parsing finished
-csvConverter.on("end_parsed",function(jsonObj){
-    console.log(jsonObj); //here is your result json object
-});
+context = {};
 
-//read from file
-csvConverter.from(csvFileName);
+function ingestCSV(src) {
+  var csvConverter=new Converter();
+  var csvFileName="./public/data/" + src + ".csv";
+  csvConverter.from(csvFileName);
+  csvConverter.on("end_parsed",function(jsonObj){
+      context[src] = jsonObj;
+      console.log(util.inspect(jsonObj, false, null));
+  });
+}
 
-// old model
-context = {
-  people: [
-    {
-      first_name: 'Steve',
-      last_name: 'Jobs',
-      company: 'Apple'
-    },
-    {
-      first_name: 'Steve',
-      last_name: 'Wozniak',
-      company: 'Apple'
-    },
-    {
-      first_name: 'Bill',
-      last_name: 'Gates',
-      company: 'Microsoft'
-    },
-    {
-      first_name: 'Steve',
-      last_name: 'Ballmer',
-      company: 'Microsoft'
-    }
-  ]
-};
+ingestCSV('people');
+ingestCSV('places');

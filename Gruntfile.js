@@ -8,7 +8,7 @@ module.exports = function(grunt) {
         options: {
           file: 'app.js',
           ignoredFiles: ['dist'],
-          watchedExtensions: ['js', 'hbs']
+          watchedExtensions: ['js', 'hbs', 'csv']
         }
       }
     },

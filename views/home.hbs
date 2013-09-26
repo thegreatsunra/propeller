@@ -9,6 +9,7 @@
 
 <hr>
 
+<h3>Back-End Loops from CSVs with Handlebars</h3>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -40,6 +41,21 @@
         <td>{{country}}</td>
       </tr>
     {{/each}}
+  </tbody>
+</table>
+
+<hr>
+
+<h3>Front-End Loops from CSV with Knockout</h3>
+<table class="table table-striped">
+  <thead>
+    <tr><th>City</th><th>Country</th></tr>
+  </thead>
+  <tbody data-bind="foreach: places">
+    <tr>
+      <td data-bind="text: city"></td>
+      <td data-bind="text: country"></td>
+    </tr>
   </tbody>
 </table>
 

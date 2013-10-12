@@ -20,7 +20,7 @@
     "requirejs": "~2.1.8",
     "knockout.js": "~2.3.0",
     "csv-js": "https://github.com/cparker15/CSV-js.git#~0.2.5",
-    "d3": "~3.3.6",
-    "moment": "~2.3.0"
+    "d3": "~3.3.7",
+    "moment": "~2.3.1"
   }
 }

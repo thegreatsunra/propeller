@@ -21,6 +21,7 @@
     "knockout.js": "~2.3.0",
     "csv-js": "https://github.com/cparker15/CSV-js.git#~0.2.5",
     "d3": "~3.3.7",
-    "moment": "~2.3.1"
+    "moment": "~2.3.1",
+    "underscore": "~1.5.2"
   }
 }

@@ -36,7 +36,8 @@ require(['./require.config'], function (common) {
 
   // test jquery by appending HTML content
   require([
-    'd3', 
+    'd3',
+    'lodash' 
     ], function(){
       'use strict';
       // this is where the code goes
@@ -53,6 +54,8 @@ require(['./require.config'], function (common) {
       
       var dataset = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 13,
               11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
+      
+      var dataset = _.sortBy(dataset);
       
       //Create SVG element
       var svg = d3.select("#d3-target")

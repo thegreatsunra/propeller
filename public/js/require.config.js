@@ -7,12 +7,11 @@ require.config({
     'csv-js': 'bower_components/csv-js/src/csv',
     moment: 'bower_components/moment/moment',
     d3: 'bower_components/d3/d3',
-    underscore: 'bower_components/underscore/underscore',
+    lodash: 'bower_components/lodash/dist/lodash',
     scripts: 'js/scripts',
     viewmodel: 'js/viewmodel'
   },
   shim: {
-  bootstrap: {deps: ['jquery']},
-  underscore: {exports: '_'}
+  bootstrap: {deps: ['jquery']}
   }
 });

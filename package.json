@@ -8,9 +8,9 @@
   "dependencies": {
     "express": "~3.4.2",
     "hbs": "~2.4.0",
-    "underscore": "~1.5.2",
     "request": "~2.27.0",
-    "csvtojson": "~0.1.4"
+    "csvtojson": "~0.1.4",
+    "lodash": "~2.2.1"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

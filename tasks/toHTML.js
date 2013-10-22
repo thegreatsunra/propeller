@@ -5,7 +5,7 @@
 var path = require('path')
   , request = require('request')
   , fs = require('fs')
-  , _ = require('underscore');
+  , _ = require('lodash');
 
 module.exports = function(grunt) {
   grunt.registerMultiTask('toHTML', 'Render Express routes to flat HTML files', function() {

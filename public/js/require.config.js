@@ -1,7 +1,7 @@
 require.config({
   baseUrl: '',
   paths: {
-    jquery: 'bower_components/bootstrap/assets/js/jquery',
+    jquery: 'bower_components/jquery/jquery',
     bootstrap: 'bower_components/bootstrap/dist/js/bootstrap',
     knockout: 'bower_components/knockout.js/knockout-2.3.0.debug',
     'csv-js': 'bower_components/csv-js/src/csv',

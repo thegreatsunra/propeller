@@ -5,9 +5,8 @@
   "authors": [
     "Dane Petersen"
   ],
-  "description": "Lightweight Prototyping Tool in Express",
+  "description": "Lightweight Prototyping Tool in Express and Bootstrap 3",
   "license": "MIT",
-  "private": true,
   "ignore": [
     "**/.*",
     "node_modules",

@@ -15,18 +15,18 @@ module.exports = function(grunt) {
     less: {
       development: {
         files: {
-          'public/css/styles.css': 'public/less/styles.less'
+          'public/app/css/styles.css': 'public/app/less/styles.less'
         }
       },
       production: {
         files: {
-          'public/css/styles.css': 'public/less/styles.less'
+          'public/app/css/styles.css': 'public/app/less/styles.less'
         }
       }
     },
     watch: {
       css: {
-        files: 'public/less/*.less',
+        files: 'public/app/less/*.less',
         tasks: ['less'],
         options: {
           livereload: true,

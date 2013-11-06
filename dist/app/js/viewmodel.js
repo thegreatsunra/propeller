@@ -1,4 +1,8 @@
-define(['jquery', 'knockout', 'csv-js'], function ($, ko, CSV) {
+define([
+  'jquery',
+  'knockout',
+  'csv-js'
+  ], function ($, ko, CSV) {
   'use strict';
 
   // Here's my data model
@@ -16,7 +20,7 @@ define(['jquery', 'knockout', 'csv-js'], function ($, ko, CSV) {
   return ViewModel;
 
   function CSVtoJSON(data) {
-    var dataPath = 'data/'
+    var dataPath = 'app/data/'
       , extension = '.csv'
       , dataURL = dataPath + data + extension
       , output = null;
@@ -31,5 +35,4 @@ define(['jquery', 'knockout', 'csv-js'], function ($, ko, CSV) {
     });
     return output;
   };
-
 });

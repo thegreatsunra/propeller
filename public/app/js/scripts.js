@@ -1,5 +1,8 @@
 // load requirejs config file
-require(['./require.config'], function (common) {
+require([
+  './require.config'
+  ], function (common) {
+  'use strict';
 
   // test jquery by appending HTML content
   require([

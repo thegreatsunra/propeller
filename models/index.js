@@ -6,7 +6,7 @@ context = {};
 
 function ingestCSV(src) {
   var csvConverter=new Converter();
-  var csvFileName="./public/data/" + src + ".csv";
+  var csvFileName="./public/app/data/" + src + ".csv";
   csvConverter.from(csvFileName);
   csvConverter.on("end_parsed",function(jsonObj){
       context[src] = jsonObj;

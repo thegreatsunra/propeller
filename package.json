@@ -1,7 +1,7 @@
 {
   "name": "express-prototyper",
   "description": "Lightweight Prototyping Tool in Express and Bootstrap 3",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "homepage": "https://github.com/thegreatsunra/express-prototyper",
   "author": "Dane Petersen",
   "scripts": {

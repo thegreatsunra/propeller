@@ -3,7 +3,7 @@ require.config({
   paths: {
     jquery: 'app/components/jquery/jquery',
     bootstrap: 'app/components/bootstrap/dist/js/bootstrap',
-    knockout: 'app/components/knockout.js/knockout-2.3.0.debug',
+    knockout: 'app/components/knockout.js/knockout.debug',
     'csv-js': 'app/components/csv-js/src/csv',
     moment: 'app/components/moment/moment',
     d3: 'app/components/d3/d3',

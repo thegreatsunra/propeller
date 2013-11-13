@@ -24,7 +24,7 @@
     "express": "~3.4.4",
     "hbs": "~2.4.0",
     "request": "~2.27.0",
-    "csvtojson": "~0.1.4",
+    "csvtojson": "~0.1.5",
     "lodash": "~2.3.0"
   },
   "devDependencies": {

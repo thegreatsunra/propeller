@@ -1,18 +1,18 @@
 {
-  "name": "express-prototyper",
-  "description": "Lightweight Prototyping Tool in Express and Bootstrap 3",
-  "version": "0.1.2",
-  "homepage": "https://github.com/thegreatsunra/express-prototyper",
+  "name": "assemble-prototyper",
+  "description": "Static Site Generator in Assemble and Bootstrap 3",
+  "version": "0.2.0",
+  "homepage": "https://github.com/thegreatsunra/assemble-prototyper",
   "author": "Dane Petersen",
   "scripts": {
     "start": "node app.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/thegreatsunra/express-prototyper.git"
+    "url": "https://github.com/thegreatsunra/assemble-prototyper.git"
   },
   "bugs": {
-      "url": "https://github.com/thegreatsunra/express-prototyper/issues"
+      "url": "https://github.com/thegreatsunra/assemble-prototyper/issues"
   },
   "licenses": [
     {

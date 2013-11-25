@@ -21,10 +21,10 @@ slug: "home"
     </tr>
   </thead>
   <tbody>
-    {{#each context.people.csvRows}}
+    {{#each people}}
       <tr>
-        <td>{{first_name}} {{last_name}}</td>
-        <td>{{company}}</td>
+        <td>{{this.first_name}} {{this.last_name}}</td>
+        <td>{{this.company}}</td>
       </tr>
     {{/each}}
   </tbody>
@@ -41,10 +41,10 @@ slug: "home"
     </tr>
   </thead>
   <tbody>
-    {{#each context.places.csvRows}}
+    {{#each places}}
       <tr>
-        <td>{{city}}</td>
-        <td>{{country}}</td>
+        <td>{{this.city}}</td>
+        <td>{{this.country}}</td>
       </tr>
     {{/each}}
   </tbody>

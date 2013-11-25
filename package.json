@@ -12,7 +12,7 @@
     "url": "https://github.com/thegreatsunra/assemble-prototyper.git"
   },
   "bugs": {
-      "url": "https://github.com/thegreatsunra/assemble-prototyper/issues"
+    "url": "https://github.com/thegreatsunra/assemble-prototyper/issues"
   },
   "licenses": [
     {
@@ -33,7 +33,8 @@
     "grunt-contrib-less": "~0.8.2",
     "grunt-contrib-jshint": "~0.7.2",
     "grunt-contrib-uglify": "~0.2.7",
-    "grunt-contrib-concat": "~0.3.0"
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-convert": "~0.1.5"
   },
   "engines": {
     "node": ">=0.10.0"

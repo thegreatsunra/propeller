@@ -1,7 +1,7 @@
 {
   "name": "assemble-prototyper",
   "description": "Static Site Generator in Assemble and Bootstrap 3",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "homepage": "https://github.com/thegreatsunra/assemble-prototyper",
   "author": "Dane Petersen",
   "scripts": {

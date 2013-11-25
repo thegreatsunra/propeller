@@ -1,16 +1,16 @@
 # Assemble Prototyper
 
-Lightweight prototyping tool in [Assemble](http://assemble.io) and [Bootstrap 3](http://getbootstrap.com) using [Handlebars](http://handlebarsjs.com) templates, with additional support for [RequireJS](http://requirejs.org), [Knockout](http://knockoutjs.com), [Moment.js](http://momentjs.com), [D3](http://d3js.org) and CSV parsing.
+Static site generator in [Assemble](http://assemble.io) and [Bootstrap 3](http://getbootstrap.com) using [Handlebars](http://handlebarsjs.com) templates, with additional support for [RequireJS](http://requirejs.org), [Knockout](http://knockoutjs.com), [Moment.js](http://momentjs.com), [D3](http://d3js.org) and CSV parsing.
 
 ## Quick Start
 
 1. Download and install [Node](http://nodejs.org)
-1. At the command line install [Bower](http://bower.io) and [Grunt](http://gruntjs.com)  globally by typing `sudo npm install -g bower grunt-cli nodemon`
+1. At the command line install [Bower](http://bower.io) and [Grunt](http://gruntjs.com)  globally by typing `sudo npm install -g bower grunt-cli`
 1. Download and unzip (or clone) the Assemble Prototyper
 1. Open the unzipped folder at the command line
 1. Type `npm install && bower install` to install all dependencies
-1. Type `grunt` to start the server
-1. Open [http://localhost:9000](http://localhost:9000) in your web browser to view the dynamic site
+1. Type `grunt server` to generate the static site and start the server
+1. Open [http://localhost:9000](http://localhost:9000) in your web browser to view the site
 
 ## Additional Information
 

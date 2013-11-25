@@ -188,12 +188,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
 
   grunt.registerTask('build', [
-    'clean', 
+    'clean',
+    'convert',
     'less', 
     'assemble',
     'jshint', 
-    'copy',
-    'convert'
+    'copy'
   ]);
 
   grunt.registerTask('server', [

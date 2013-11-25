@@ -78,7 +78,7 @@ module.exports = function(grunt) {
 
     /* clean out destination folder by brute force */
     clean: {
-      main: ['<%= config.dest %>/**/*', '<%= config.dest %>/.htaccess'],
+      main: ['<%= config.dest %>/**/*', '<%= config.dest %>/.htaccess', '<%= config.src %>/assemble/data/**/*.json'],
     },
 
     /* compile LESS manifest file into CSS */
@@ -160,9 +160,24 @@ module.exports = function(grunt) {
       }
     },
 
+    convert: {
+      options: {
+        explicitArray: false,
+      },
+      places: {
+        src: '<%= config.src %>/data/places.csv',
+        dest: '<%= config.src %>/assemble/data/places.json'
+      },
+      people: {
+        src: '<%= config.src %>/data/people.csv',
+        dest: '<%= config.src %>/assemble/data/people.json'
+      }
+    }
+
   });
 
   grunt.loadNpmTasks('assemble');
+  grunt.loadNpmTasks('grunt-convert');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-connect');
@@ -178,6 +193,7 @@ module.exports = function(grunt) {
     'assemble',
     'jshint', 
     'copy',
+    'convert'
   ]);
 
   grunt.registerTask('server', [

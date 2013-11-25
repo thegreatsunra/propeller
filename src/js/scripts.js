@@ -8,7 +8,6 @@ require([
   require([
     'jquery', 
     ], function($){
-      'use strict';
       // this is where the code goes
       $(function() {
         $('.lead').html('Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.');
@@ -20,7 +19,6 @@ require([
     'knockout',
     'viewmodel'
     ], function(ko, HelloViewModel){
-      'use strict';
       // this is where the code goes
       ko.applyBindings(new HelloViewModel("Planet", "Earth")); // This makes Knockout get to work
   });
@@ -30,7 +28,6 @@ require([
     'jquery',
     'bootstrap'
     ], function($, bootstrap){
-      'use strict';
       // any JavaScript that requires bootstrap should go here
       //
       //
@@ -42,7 +39,6 @@ require([
     'd3',
     'lodash' 
     ], function(){
-      'use strict';
       // this is where the code goes
 
       // D3 code sample from
@@ -58,7 +54,7 @@ require([
       var dataset = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 13,
               11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
       
-      var dataset = _.sortBy(dataset);
+      dataset = _.sortBy(dataset);
       
       //Create SVG element
       var svg = d3.select("#d3-target")
@@ -87,13 +83,12 @@ require([
     'jquery',
     'moment'
     ], function($, moment){
-      'use strict';
       function updateTime(){
         $('#moment-target').text(moment().format('MMMM Do YYYY, h:mm:ss a'));
       }
       $(function(){
           updateTime();
           setInterval(updateTime, 1000);
-      })
+      });
   });
 });

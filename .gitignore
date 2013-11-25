@@ -1,4 +1,10 @@
 # ================
+# Assemble Prototyper
+# ================
+dist
+src/components
+
+# ================
 # Node
 # ================
 lib-cov

@@ -11,6 +11,7 @@ node_modules
 pids
 logs
 
+src/components
 dist
 release
 /tmp/

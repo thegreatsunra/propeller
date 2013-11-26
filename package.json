@@ -1,18 +1,18 @@
 {
-  "name": "assemble-prototyper",
+  "name": "propeller",
   "description": "Static Site Generator in Assemble and Bootstrap 3",
   "version": "0.2.2",
-  "homepage": "https://github.com/thegreatsunra/assemble-prototyper",
+  "homepage": "http://propellerjs.com",
   "author": "Dane Petersen",
   "scripts": {
     "start": "node app.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/thegreatsunra/assemble-prototyper.git"
+    "url": "https://github.com/thegreatsunra/propeller.git"
   },
   "bugs": {
-    "url": "https://github.com/thegreatsunra/assemble-prototyper/issues"
+    "url": "https://github.com/thegreatsunra/propeller/issues"
   },
   "licenses": [
     {

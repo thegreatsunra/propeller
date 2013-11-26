@@ -1,7 +1,7 @@
 {
-  "name": "assemble-prototyper",
   "version": "0.2.2",
-  "homepage": "https://github.com/thegreatsunra/assemble-prototyper",
+  "name": "propeller",
+  "homepage": "https://github.com/thegreatsunra/propeller",
   "authors": [
     "Dane Petersen"
   ],

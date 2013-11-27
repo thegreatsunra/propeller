@@ -171,6 +171,10 @@ module.exports = function(grunt) {
       people: {
         src: '<%= config.src %>/data/people.csv',
         dest: '<%= config.src %>/assemble/data/people.json'
+      },
+      numbers: {
+        src: '<%= config.src %>/data/numbers.csv',
+        dest: '<%= config.src %>/assemble/data/numbers.json'
       }
     }
 

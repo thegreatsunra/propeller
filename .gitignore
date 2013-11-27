@@ -2,7 +2,7 @@
 # Assemble Prototyper
 # ================
 dist
-src/components
+src/app/components
 
 # ================
 # Node

@@ -195,18 +195,17 @@ module.exports = function(grunt) {
     'clean',
     'convert',
     'less', 
-    'assemble',
     'jshint', 
-    'copy'
+    'copy',
+    'assemble'
   ]);
 
   grunt.registerTask('server', [
-    'build',
     'connect',
     'watch'
   ]);
 
   grunt.registerTask('default', [
-    'build'
+    'server'
   ]);
 };

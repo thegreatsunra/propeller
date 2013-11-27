@@ -8,16 +8,16 @@ module.exports = function(grunt) {
 
     /* define variables for Gruntfile */
     config: {
-      src: 'src',
-      dest: 'dist',
-      assetsFolder: 'public',
-      componentsFolder: 'components',
-      jsFolder: 'js',
-      jsMainFile: 'scripts',
-      cssFolder: 'css',
-      cssMainFile: 'styles',
-      imgFolder: 'images',
-      appFolder: 'app'
+      src:              'src',
+      dist:             'dist',
+      appFolder:        'app',
+      componentsFolder: 'app/components',
+      jsFolder:         'app/js',
+      cssFolder:        'app/css',
+      imgFolder:        'app/img',
+      dataFolder:       'app/data',
+      cssMainFile:      'styles',
+      jsMainFile:       'scripts'
     },
 
     /* run jshint against all javascripts, including Gruntfile */
@@ -25,27 +25,26 @@ module.exports = function(grunt) {
       files: ['Gruntfile.js', '<%= config.src %>/<%= config.jsFolder %>/**/*.js']
     },
 
-    /* copy static assets into root of destination */
+    /* copy assets into root of destination */
     copy: {
-      assets: {
-        files: [
-          {
-            expand: true,
-            cwd: '<%= config.src %>/<%= config.assetsFolder %>',
-            src: '**',
-            dest: '<%= config.dest %>/',
-            dot: true
-          }
-        ]
-      },
       data: {
         files: [
           {
             expand: true,
-            cwd: '<%= config.src %>/data',
+            cwd: '<%= config.src %>/<%= config.dataFolder %>',
             src: '**',
-            dest: '<%= config.dest %>/<%= config.appFolder %>/data',
-            dot: true
+            dest: '<%= config.dist %>/<%= config.dataFolder %>',
+          }
+        ]
+      },
+
+      img: {
+        files: [
+          {
+            expand: true,
+            cwd: '<%= config.src %>/<%= config.imgFolder %>',
+            src: '**',
+            dest: '<%= config.dist %>/<%= config.imgFolder %>',
           }
         ]
       },
@@ -56,7 +55,18 @@ module.exports = function(grunt) {
             expand: true,
             cwd: '<%= config.src %>/<%= config.jsFolder %>',
             src: '**/*.js',
-            dest: '<%= config.dest %>/<%= config.appFolder %>/js',
+            dest: '<%= config.dist %>/<%= config.jsFolder %>',
+          }
+        ]
+      },
+
+      src: {
+        files: [
+          {
+            expand: true,
+            cwd: '<%= config.src %>/',
+            src: '*',
+            dest: '<%= config.dist %>/',
             dot: true
           }
         ]
@@ -69,7 +79,7 @@ module.exports = function(grunt) {
             expand: true,
             cwd: '<%= config.src %>/<%= config.componentsFolder %>',
             src: '**',
-            dest: '<%= config.dest %>/<%= config.appFolder %>/<%= config.componentsFolder %>',
+            dest: '<%= config.dist %>/<%= config.componentsFolder %>',
             dot: true
           }
         ]
@@ -78,7 +88,7 @@ module.exports = function(grunt) {
 
     /* clean out destination folder by brute force */
     clean: {
-      main: ['<%= config.dest %>/**/*', '<%= config.dest %>/.htaccess', '<%= config.src %>/assemble/data/**/*.json'],
+      main: ['<%= config.dist %>/**/*', '<%= config.dist %>/.htaccess', '<%= config.src %>/assemble/<%= config.dataFolder %>/**/*.json'],
     },
 
     /* compile LESS manifest file into CSS */
@@ -88,7 +98,7 @@ module.exports = function(grunt) {
           compress: false
         },
         files: {
-          "<%= config.dest %>/<%= config.appFolder %>/<%= config.cssFolder %>/<%= config.cssMainFile %>.css": "<%= config.src %>/<%= config.cssFolder %>/<%= config.cssMainFile %>.less"
+          "<%= config.dist %>/<%= config.cssFolder %>/<%= config.cssMainFile %>.css": "<%= config.src %>/<%= config.cssFolder %>/<%= config.cssMainFile %>.less"
         }
       },
       production: {
@@ -96,7 +106,7 @@ module.exports = function(grunt) {
           compress: true
         },
         files: {
-          "<%= config.dest %>/<%= config.appFolder %>/<%= config.cssFolder %>/<%= config.cssMainFile %>.min.css": "<%= config.src %>/<%= config.cssFolder %>/<%= config.cssMainFile %>.less"
+          "<%= config.dist %>/<%= config.cssFolder %>/<%= config.cssMainFile %>.min.css": "<%= config.src %>/<%= config.cssFolder %>/<%= config.cssMainFile %>.less"
         }
       }
     },
@@ -111,7 +121,7 @@ module.exports = function(grunt) {
           partials: '<%= config.src %>/assemble/partials/*.hbs'
         },
         files: {
-          '<%= config.dest %>/': ['<%= config.src %>/assemble/pages/*.hbs']
+          '<%= config.dist %>/': ['<%= config.src %>/assemble/pages/*.hbs']
         }
       }
     },
@@ -128,7 +138,7 @@ module.exports = function(grunt) {
         options: {
           open: true,
           base: [
-            '<%= config.dest %>'
+            '<%= config.dist %>'
           ]
         }
       }
@@ -141,21 +151,25 @@ module.exports = function(grunt) {
         tasks: ['jshint', 'copy:js']
       },
       assemble: {
-        files: ['<%= config.src %>/assemble/**/*.{hbs,yml}'],
+        files: ['<%= config.src %>/assemble/**/*.{hbs,yml,json}'],
         tasks: ['assemble']
       },
       less: {
         files: ['<%= config.src %>/<%= cssFolder %>/**/*.{css,less}'],
         tasks: ['less']
       },
+      data: {
+        files: ['<%= config.src %>/<%= dataFolder %>/**/*.{csv}'],
+        tasks: ['convert']
+      },
       livereload: {
         options: {
           livereload: '<%= connect.options.livereload %>'
         },
         files: [
-          '<%= config.dest %>/**/*.html',
-          '<%= config.dest %>/<%= config.cssFolder %>/**/*.css',
-          '<%= config.dest %>/<%= config.jsFolder %>/**/*.js'
+          '<%= config.dist %>/**/*.html',
+          '<%= config.dist %>/<%= config.cssFolder %>/**/*.css',
+          '<%= config.dist %>/<%= config.jsFolder %>/**/*.js'
         ]
       }
     },
@@ -165,15 +179,15 @@ module.exports = function(grunt) {
         explicitArray: false,
       },
       places: {
-        src: '<%= config.src %>/data/places.csv',
+        src: '<%= config.src %>/<%= config.dataFolder %>/places.csv',
         dest: '<%= config.src %>/assemble/data/places.json'
       },
       people: {
-        src: '<%= config.src %>/data/people.csv',
+        src: '<%= config.src %>/<%= config.dataFolder %>/people.csv',
         dest: '<%= config.src %>/assemble/data/people.json'
       },
       numbers: {
-        src: '<%= config.src %>/data/numbers.csv',
+        src: '<%= config.src %>/<%= config.dataFolder %>/numbers.csv',
         dest: '<%= config.src %>/assemble/data/numbers.json'
       }
     }

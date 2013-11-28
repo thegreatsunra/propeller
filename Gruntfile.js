@@ -1,12 +1,12 @@
 module.exports = function(grunt) {
-
   'use strict';
+
   require('time-grunt')(grunt);
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
-    /* define variables for Gruntfile */
+    // define variables for Gruntfile
     config: {
       src:              'src',
       dist:             'dist',
@@ -20,12 +20,12 @@ module.exports = function(grunt) {
       jsMainFile:       'scripts'
     },
 
-    /* run jshint against all javascripts, including Gruntfile */
+    // run jshint against all javascripts, including Gruntfile
     jshint: {
       files: ['Gruntfile.js', '<%= config.src %>/<%= config.jsFolder %>/**/*.js']
     },
 
-    /* copy assets into root of destination */
+    // copy assets into root of destination
     copy: {
       data: {
         files: [
@@ -72,7 +72,7 @@ module.exports = function(grunt) {
         ]
       },
 
-      /* copy bower components as well */
+      // copy bower components as well
       components: {
         files: [
           {
@@ -86,12 +86,12 @@ module.exports = function(grunt) {
       }
     },
 
-    /* clean out destination folder by brute force */
+    // clean out destination folder by brute force
     clean: {
       main: ['<%= config.dist %>/**/*', '<%= config.dist %>/.htaccess', '<%= config.src %>/assemble/<%= config.dataFolder %>/**/*.json'],
     },
 
-    /* compile LESS manifest file into CSS */
+    // compile LESS manifest file into CSS
     less: {
       development: {
         options: {
@@ -111,7 +111,7 @@ module.exports = function(grunt) {
       }
     },
 
-    /* Use Assemble to generate all HTML pages */
+    // Use Assemble to generate all HTML pages
     assemble: {
       pages: {
         options: {
@@ -126,7 +126,7 @@ module.exports = function(grunt) {
       }
     },
 
-    /* connect server */
+    // create connect server
     connect: {
       options: {
         port: 9000,
@@ -144,7 +144,7 @@ module.exports = function(grunt) {
       }
     },
 
-    /* watch for file changes and run tasks in response */
+    // watch for file changes and run tasks in response
     watch: {
       js: {
         files: ['<%= jshint.files %>'],
@@ -159,7 +159,7 @@ module.exports = function(grunt) {
         tasks: ['less']
       },
       data: {
-        files: ['<%= config.src %>/<%= dataFolder %>/**/*.{csv}'],
+        files: ['<%= config.src %>/<%= dataFolder %>/*.csv'],
         tasks: ['convert']
       },
       livereload: {
@@ -191,7 +191,6 @@ module.exports = function(grunt) {
         dest: '<%= config.src %>/assemble/data/numbers.json'
       }
     }
-
   });
 
   // automatically load all grunt-* tasks in --save-dev
@@ -200,6 +199,7 @@ module.exports = function(grunt) {
   // load assemble manually because it doesn't match the grunt-* pattern
   grunt.loadNpmTasks('assemble');
 
+  // create build task
   grunt.registerTask('build', [
     'clean',
     'convert',
@@ -209,11 +209,13 @@ module.exports = function(grunt) {
     'assemble'
   ]);
 
+  // create server task
   grunt.registerTask('server', [
     'connect',
     'watch'
   ]);
 
+  // set default grunt task
   grunt.registerTask('default', [
     'server'
   ]);

@@ -21,7 +21,7 @@
     }
   ],
   "devDependencies": {
-    "lodash": "~2.3.0",
+    "lodash": "~2.4.0",
     "csvtojson": "~0.1.5",
     "assemble": "~0.4.22",
     "grunt": "~0.4.1",

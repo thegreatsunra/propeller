@@ -34,7 +34,7 @@ require([
       //
   });
 
-  // test jquery by appending HTML content
+  // test d3 by adding example visualization with csv data
   require([
     'd3',
     'lodash' 

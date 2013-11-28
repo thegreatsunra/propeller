@@ -22,7 +22,7 @@ module.exports = function(grunt) {
 
     // run jshint against all javascripts, including Gruntfile
     jshint: {
-      files: ['Gruntfile.js', '<%= config.src %>/<%= config.jsFolder %>/**/*.js']
+      files: ['Gruntfile.js', '<%= config.src %>/<%= config.jsFolder %>/*.js']
     },
 
     // copy assets into root of destination
@@ -88,7 +88,7 @@ module.exports = function(grunt) {
 
     // clean out destination folder by brute force
     clean: {
-      main: ['<%= config.dist %>/**/*', '<%= config.dist %>/.htaccess', '<%= config.src %>/assemble/<%= config.dataFolder %>/**/*.json'],
+      main: ['<%= config.dist %>/**/*', '<%= config.dist %>/.htaccess', '<%= config.src %>/assemble/<%= config.dataFolder %>/*.json'],
     },
 
     // compile LESS manifest file into CSS
@@ -121,7 +121,7 @@ module.exports = function(grunt) {
           partials: '<%= config.src %>/assemble/partials/*.hbs'
         },
         files: {
-          '<%= config.dist %>/': ['<%= config.src %>/assemble/pages/*.hbs']
+          '<%= config.dist %>/': ['<%= config.src %>/assemble/pages/**/*.hbs']
         }
       }
     },
@@ -155,7 +155,7 @@ module.exports = function(grunt) {
         tasks: ['assemble']
       },
       less: {
-        files: ['<%= config.src %>/<%= cssFolder %>/**/*.{css,less}'],
+        files: ['<%= config.src %>/<%= cssFolder %>/*.{css,less}'],
         tasks: ['less']
       },
       data: {
@@ -168,8 +168,8 @@ module.exports = function(grunt) {
         },
         files: [
           '<%= config.dist %>/**/*.html',
-          '<%= config.dist %>/<%= config.cssFolder %>/**/*.css',
-          '<%= config.dist %>/<%= config.jsFolder %>/**/*.js'
+          '<%= config.dist %>/<%= config.cssFolder %>/*.css',
+          '<%= config.dist %>/<%= config.jsFolder %>/*.js'
         ]
       }
     },

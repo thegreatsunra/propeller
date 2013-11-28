@@ -174,21 +174,18 @@ module.exports = function(grunt) {
       }
     },
 
+    // convert all CSV files into JSON files
     convert: {
-      options: {
-        explicitArray: false,
-      },
-      places: {
-        src: '<%= config.src %>/<%= config.dataFolder %>/places.csv',
-        dest: '<%= config.src %>/assemble/data/places.json'
-      },
-      people: {
-        src: '<%= config.src %>/<%= config.dataFolder %>/people.csv',
-        dest: '<%= config.src %>/assemble/data/people.json'
-      },
-      numbers: {
-        src: '<%= config.src %>/<%= config.dataFolder %>/numbers.csv',
-        dest: '<%= config.src %>/assemble/data/numbers.json'
+      csvs: {
+        files: [
+          {
+            expand: true,
+            cwd: '<%= config.src %>/<%= config.dataFolder %>/',
+            src: ['*.csv'],
+            dest: '<%= config.src %>/assemble/data/',
+            ext: '.json'
+          }
+        ]
       }
     }
   });

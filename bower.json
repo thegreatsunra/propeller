@@ -19,7 +19,7 @@
     "requirejs": "~2.1.9",
     "knockout.js": "~3.0.0",
     "csv-js": "https://github.com/cparker15/CSV-js.git#~0.2.5",
-    "d3": "~3.3.10",
+    "d3": "~3.3.11",
     "moment": "~2.4.0",
     "lodash": "~2.4.0",
     "jquery": "~1.10.2"

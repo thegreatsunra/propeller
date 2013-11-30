@@ -23,8 +23,8 @@
   "devDependencies": {
     "lodash": "~2.4.0",
     "csvtojson": "~0.1.5",
-    "assemble": "~0.4.22",
-    "grunt": "~0.4.1",
+    "assemble": "~0.4.30",
+    "grunt": "~0.4.2",
     "time-grunt": "~0.2.3",
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-connect": "~0.5.0",

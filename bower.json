@@ -21,6 +21,7 @@
     "csv-js": "https://github.com/cparker15/CSV-js.git#~0.2.5",
     "d3": "~3.3.11",
     "moment": "~2.4.0",
+    "lesshat": "~2.0.10",
     "lodash": "~2.4.0",
     "jquery": "~1.10.2"
   }

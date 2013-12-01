@@ -24,6 +24,7 @@
     "lodash": "~2.4.0",
     "csvtojson": "~0.1.5",
     "assemble": "~0.4.30",
+    "assemble-contrib-permalinks": "~0.3.1",
     "grunt": "~0.4.2",
     "time-grunt": "~0.2.3",
     "grunt-contrib-clean": "~0.5.0",

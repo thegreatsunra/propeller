@@ -1,0 +1,27 @@
+v0.3.5:
+  date: "2013-12-01"
+  changes:
+    - Replace LESS Elements with LESS Hat
+v0.3.4:
+  date: "2013-11-27"
+  changes:
+    - Update README to reflect new Grunt tasks
+v0.3.3:
+  date: "2013-11-27"
+  changes:
+    - Remove outdated Express code for models
+v0.3.2:
+  date: "2013-11-27"
+  changes:
+    - Automatically detect all CSV files in /src/app/data and generate corresponding JSON files in /src/assemble/data
+    - Add support for static root files in /src
+    - Update d3 example to ingest data via CSV file
+    - Collapse all assets into /src/app folder
+v0.3.1:
+  date: "2013-11-25"
+  changes:
+    - Clean up .*ignore dot files
+v0.3.0:
+  date: "2013-11-25"
+  changes:
+    - The assemble-prototyper project is now known as propeller

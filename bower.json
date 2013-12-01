@@ -23,6 +23,6 @@
     "lesshat": "~2.0.10",
     "lodash": "~2.4.0",
     "moment": "~2.4.0",
-    "requirejs": "~2.1.9",
+    "requirejs": "~2.1.9"
   }
 }

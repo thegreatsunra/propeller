@@ -1,8 +1,9 @@
 # ================
-# Assemble Prototyper
+# Propeller
 # ================
 dist
 src/app/components
+
 
 # ================
 # Node
@@ -22,12 +23,6 @@ results
 
 npm-debug.log
 node_modules
-
-
-# ================
-# Bower
-# ================
-public/app/components
 
 
 # ================

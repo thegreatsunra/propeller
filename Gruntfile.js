@@ -158,11 +158,11 @@ module.exports = function(grunt) {
         tasks: ['assemble']
       },
       less: {
-        files: ['<%= config.src %>/<%= cssFolder %>/*.{css,less}'],
+        files: ['<%= config.src %>/<%= config.cssFolder %>/*.{css,less}'],
         tasks: ['less']
       },
       data: {
-        files: ['<%= config.src %>/<%= dataFolder %>/*.csv'],
+        files: ['<%= config.src %>/<%= config.dataFolder %>/*.csv'],
         tasks: ['convert']
       },
       livereload: {

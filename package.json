@@ -21,7 +21,7 @@
     }
   ],
   "devDependencies": {
-    "assemble": "~0.4.30",
+    "assemble": "~0.4.32",
     "assemble-contrib-permalinks": "~0.3.1",
     "csvtojson": "~0.1.5",
     "grunt": "~0.4.2",
@@ -31,10 +31,10 @@
     "grunt-contrib-connect": "~0.5.0",
     "grunt-contrib-copy": "~0.4.1",
     "grunt-contrib-jshint": "~0.7.2",
-    "grunt-contrib-less": "~0.8.2",
+    "grunt-contrib-less": "~0.8.3",
     "grunt-contrib-uglify": "~0.2.7",
     "grunt-contrib-watch": "~0.5.3",
-    "grunt-convert": "~0.1.5",
+    "grunt-convert": "~0.1.6",
     "load-grunt-tasks": "~0.2.0",
     "lodash": "~2.4.0"
   },

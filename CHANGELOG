@@ -1,3 +1,9 @@
+v0.3.6:
+  date: "2013-12-07"
+  changes:
+    - Fix path variables for LESS and data watch tasks
+    - Bump versions on Bootstrap, LESSHat, Lo-Dash
+    - Bump versions on Assemble, grunt-contrib-less, grunt-convert
 v0.3.5:
   date: "2013-12-01"
   changes:

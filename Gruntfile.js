@@ -88,7 +88,7 @@ module.exports = function(grunt) {
           {
             expand: true,
             cwd: '<%= config.src %>/',
-            src: '*',
+            src: ['*', '!assemble'],
             dest: '<%= config.dist %>/',
             dot: true
           }

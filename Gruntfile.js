@@ -20,6 +20,29 @@ module.exports = function(grunt) {
       jsMainFile:       'scripts'
     },
 
+    // concat all javascripts into a single file
+    concat: {
+      options: {
+        separator: ';'
+      },
+      dist: {
+        src: ['<%= config.src %>/<%= config.jsFolder %>/**/*.js'],
+        dest: '<%= config.dist %>/<%= config.jsFolder %>/<%= config.jsMainFile %>.js'
+      }
+    },
+
+    // compress concatenated javascripts
+    uglify: {
+      options: {
+        banner: '/*! <%= config.jsMainFile %>.js (generated <%= grunt.template.today("dd-mm-yyyy") %>) */\n'
+      },
+      dist: {
+        files: {
+          '<%= config.dist %>/<%= config.jsFolder %>/<%= config.jsMainFile %>.min.js': ['<%= concat.dist.dest %>']
+        }
+      }
+    },
+
     // run jshint against all javascripts, including Gruntfile
     jshint: {
       files: ['Gruntfile.js', '<%= config.src %>/<%= config.jsFolder %>/*.js']

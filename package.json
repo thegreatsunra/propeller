@@ -34,7 +34,7 @@
     "grunt-contrib-less": "~0.8.3",
     "grunt-contrib-uglify": "~0.2.7",
     "grunt-contrib-watch": "~0.5.3",
-    "grunt-convert": "~0.1.6",
+    "grunt-convert": "~0.1.7",
     "load-grunt-tasks": "~0.2.0",
     "lodash": "~2.4.0"
   },

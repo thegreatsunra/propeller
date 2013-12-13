@@ -32,26 +32,6 @@ slug: "home"
 
 <hr>
 
-<h3>Back-end loop from CSV file with Handlebars:</h3>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>City</th>
-      <th>Country</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each places}}
-      <tr>
-        <td>{{this.city}}</td>
-        <td>{{this.country}}</td>
-      </tr>
-    {{/each}}
-  </tbody>
-</table>
-
-<hr>
-
 <h3>Front-end Loops from CSV with Knockout:</h3>
 <p>This example requires a web server due to Access-Control-Allow-Origin policies. Double-clicking the dist/index.html file will not work.</p>
 <table class="table table-striped">

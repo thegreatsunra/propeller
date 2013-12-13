@@ -47,7 +47,7 @@ require([
       // http://chimera.labs.oreilly.com/books/1230000000345/ch06.html#interactive_6-4
 
       //Width and height
-      var w = 500;
+      var w = 800;
       var h = 100;
       var barPadding = 1;
       var dataset = [];
@@ -79,11 +79,11 @@ require([
             return i * (w / data.length);
           })
           .attr("y", function(d) {
-            return h - (d.value * 4);
+            return h - (d.value / 10);
           })
           .attr("width", w / data.length - barPadding)
           .attr("height", function(d) {
-            return d.value * 4;
+            return d.value / 10;
           });
       }
   });

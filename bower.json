@@ -20,7 +20,7 @@
     "d3": "~3.3.11",
     "jquery": "~1.10.2",
     "knockout.js": "~3.0.0",
-    "lesshat": "~2.0.11",
+    "lesshat": "~2.0.12",
     "lodash": "~2.4.1",
     "moment": "~2.4.0",
     "requirejs": "~2.1.9"

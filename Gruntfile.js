@@ -213,8 +213,8 @@ module.exports = function(grunt) {
         tasks: ['less']
       },
       data: {
-        tasks: ['convert']
         files: ['<%= config.src %>/<%= config.dataFolder %>/**/*.csv'],
+        tasks: ['convert', 'copy:data']
       },
       livereload: {
         options: {

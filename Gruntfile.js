@@ -149,7 +149,8 @@ module.exports = function(grunt) {
     // Use Assemble to generate all HTML pages
     assemble: {
       options: {
-        plugins: ['assemble-contrib-permalinks']
+        plugins: ['assemble-contrib-permalinks'],
+        helpers: ['<%= config.src %>/assemble/helpers/**/*.js']
       },
       pages: {
         options: {

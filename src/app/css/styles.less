@@ -2,6 +2,19 @@
   LESS Manifest
   ---------------------------------------------------*/
 
+/* 
+  Propeller will process any LESS files in this folder,
+  generating CSS files from them in expanded (.css)
+  and minified (.min.css) flavors.
+
+  LESS files preceeded with an underscore (i.e. _base.less)
+  will be ignored. Propeller assumes these files
+  are partials that are being imported into a
+  manifest file (i.e. styles.css).
+
+  LESS files in nested folders will be handled as well.
+*/
+
 @import (reference) "../components/lesshat/build/lesshat.less";
 @import (reference) "_variables.less";
 @import (reference) "_mixins.less";

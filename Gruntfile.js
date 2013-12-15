@@ -183,6 +183,21 @@ module.exports = function(grunt) {
       }
     },
 
+    // convert all CSV files into JSON files
+    convert: {
+      csvs: {
+        files: [
+          {
+            expand: true,
+            cwd: '<%= config.src %>/<%= config.dataFolder %>/',
+            src: ['*.csv'],
+            dest: '<%= config.src %>/assemble/data/',
+            ext: '.json'
+          }
+        ]
+      }
+    },
+
     // watch for file changes and run tasks in response
     watch: {
       js: {
@@ -212,21 +227,6 @@ module.exports = function(grunt) {
         ]
       }
     },
-
-    // convert all CSV files into JSON files
-    convert: {
-      csvs: {
-        files: [
-          {
-            expand: true,
-            cwd: '<%= config.src %>/<%= config.dataFolder %>/',
-            src: ['*.csv'],
-            dest: '<%= config.src %>/assemble/data/',
-            ext: '.json'
-          }
-        ]
-      }
-    }
   });
 
   // automatically load all grunt-* tasks in --save-dev

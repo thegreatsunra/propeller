@@ -1,6 +1,22 @@
 ---
 title: "About"
 slug: "about"
+scripts:
+  - "jquery_example"
 ---
 
-<h1>This is the about screen.</h1>
+<h1>This is the {{propeller page.title}} screen.</h1>
+
+<hr>
+
+<h3>Append text with jQuery:</h3>
+<p class="lead"></p>
+
+<hr>
+
+<h3>Toggle Bootstrap modal:</h3>
+
+<!-- Button trigger modal -->
+<p><a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Launch demo modal</a></p>
+
+{{> bootstrap_modal}}

@@ -1,5 +1,5 @@
 (function() {
-  module.exports.register = function(Handlebars, options) {
+  module.exports.register = function(Handlebars, options, params) {
 
     /**
      * Helper name

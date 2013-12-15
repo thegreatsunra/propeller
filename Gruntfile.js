@@ -120,17 +120,29 @@ module.exports = function(grunt) {
         options: {
           compress: false
         },
-        files: {
-          "<%= config.dist %>/<%= config.cssFolder %>/<%= config.cssMainFile %>.css": "<%= config.src %>/<%= config.cssFolder %>/<%= config.cssMainFile %>.less"
-        }
+        files: [
+          {
+            expand: true,
+            cwd: '<%= config.src %>/<%= config.cssFolder %>/',
+            src: ['**/*.{less,css}', '!_*'],
+            dest: '<%= config.dist %>/<%= config.cssFolder %>/',
+            ext: '.css'
+          }
+        ]
       },
       production: {
         options: {
           compress: true
         },
-        files: {
-          "<%= config.dist %>/<%= config.cssFolder %>/<%= config.cssMainFile %>.min.css": "<%= config.src %>/<%= config.cssFolder %>/<%= config.cssMainFile %>.less"
-        }
+        files: [
+          {
+            expand: true,
+            cwd: '<%= config.src %>/<%= config.cssFolder %>/',
+            src: ['**/*.{less,css}', '!_*'],
+            dest: '<%= config.dist %>/<%= config.cssFolder %>/',
+            ext: '.min.css'
+          }
+        ]
       }
     },
 

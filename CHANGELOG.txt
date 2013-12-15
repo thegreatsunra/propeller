@@ -1,3 +1,11 @@
+v0.4.0:
+  date: "2013-12-15"
+  changes:
+    - Add support for custom Handlebars helpers
+    - Add YML support for including unique sets of CSS files on a page-by-page basis
+    - Add support for static CSS files and nested folders for CSS/LESS assets
+    - Add YML support for including unique sets of JS files on a page-by-page basis
+    - Split JavaScript examples into multiple files and add to About and Contact pages
 v0.3.10:
   date: "2013-12-12"
   changes:

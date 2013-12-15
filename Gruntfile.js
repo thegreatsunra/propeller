@@ -45,7 +45,7 @@ module.exports = function(grunt) {
 
     // run jshint against all javascripts, including Gruntfile
     jshint: {
-      files: ['Gruntfile.js', '<%= config.src %>/<%= config.jsFolder %>/*.js']
+      files: ['Gruntfile.js', '<%= config.src %>/<%= config.jsFolder %>/**/.js']
     },
 
     // copy assets into root of destination
@@ -209,12 +209,12 @@ module.exports = function(grunt) {
         tasks: ['assemble']
       },
       less: {
-        files: ['<%= config.src %>/<%= config.cssFolder %>/*.{css,less}'],
+        files: ['<%= config.src %>/<%= config.cssFolder %>/**/*.{css,less}'],
         tasks: ['less']
       },
       data: {
-        files: ['<%= config.src %>/<%= config.dataFolder %>/*.csv'],
         tasks: ['convert']
+        files: ['<%= config.src %>/<%= config.dataFolder %>/**/*.csv'],
       },
       livereload: {
         options: {
@@ -222,8 +222,8 @@ module.exports = function(grunt) {
         },
         files: [
           '<%= config.dist %>/**/*.html',
-          '<%= config.dist %>/<%= config.cssFolder %>/*.css',
-          '<%= config.dist %>/<%= config.jsFolder %>/*.js'
+          '<%= config.dist %>/<%= config.cssFolder %>/**/*.css',
+          '<%= config.dist %>/<%= config.jsFolder %>/**/*.js'
         ]
       }
     },

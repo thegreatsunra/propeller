@@ -157,8 +157,8 @@ module.exports = function(grunt) {
         options: {
           flatten: true,
           layout: '<%= config.src %>/assemble/layouts/default.hbs',
-          data: '<%= config.src %>/assemble/data/*.{json,yml}',
-          partials: '<%= config.src %>/assemble/partials/*.hbs'
+          data: '<%= config.src %>/assemble/data/**/*.{json,yml}',
+          partials: '<%= config.src %>/assemble/partials/**/*.hbs'
         },
         files: {
           '<%= config.dist %>/': ['<%= config.src %>/assemble/pages/**/*.hbs']

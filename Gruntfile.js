@@ -111,7 +111,7 @@ module.exports = function(grunt) {
 
     // clean out destination folder by brute force
     clean: {
-      main: ['<%= config.dist %>/**/*', '<%= config.dist %>/.htaccess', '<%= config.src %>/assemble/<%= config.dataFolder %>/*.json'],
+      main: ['<%= config.dist %>/**/*', '<%= config.dist %>/.*', '<%= config.src %>/assemble/<%= config.dataFolder %>/*.json'],
     },
 
     // compile LESS manifest file into CSS

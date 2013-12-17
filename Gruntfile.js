@@ -114,7 +114,8 @@ module.exports = function(grunt) {
       main: ['<%= config.dist %>/**/*', '<%= config.dist %>/.*', '<%= config.src %>/assemble/<%= config.dataFolder %>/*.json'],
     },
 
-    // compile LESS manifest file into CSS
+    // compile all non-partial LESS files into CSS
+    // and copy all CSS files into their appropriate location as well
     less: {
       development: {
         options: {

@@ -184,14 +184,14 @@ module.exports = function(grunt) {
       }
     },
 
-    // convert all CSV files into JSON files
+    // convert all CSV files into JSON files for Assemble
     convert: {
       csvs: {
         files: [
           {
             expand: true,
             cwd: '<%= config.src %>/<%= config.dataFolder %>/',
-            src: ['*.csv'],
+            src: ['**/*.csv'],
             dest: '<%= config.src %>/assemble/data/',
             ext: '.json'
           }
@@ -224,7 +224,8 @@ module.exports = function(grunt) {
         files: [
           '<%= config.dist %>/**/*.html',
           '<%= config.dist %>/<%= config.cssFolder %>/**/*.css',
-          '<%= config.dist %>/<%= config.jsFolder %>/**/*.js'
+          '<%= config.dist %>/<%= config.jsFolder %>/**/*.js',
+          '<%= config.dist %>/<%= config.dataFolder %>/**/*.csv'
         ]
       }
     },

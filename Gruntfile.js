@@ -45,7 +45,7 @@ module.exports = function(grunt) {
 
     // run jshint against all javascripts, including Gruntfile
     jshint: {
-      files: ['Gruntfile.js', '<%= config.src %>/<%= config.jsFolder %>/**/.js']
+      files: ['Gruntfile.js', '<%= config.src %>/<%= config.jsFolder %>/**/*.js']
     },
 
     // copy assets into root of destination

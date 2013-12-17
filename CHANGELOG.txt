@@ -1,3 +1,9 @@
+v0.4.3:
+  date: "2013-12-16"
+  changes:
+    - Fix jshint globbing pattern for javascript files
+    - Improve support for assets in nested folders
+    - Bug fixes and enhancements
 v0.4.2:
   date: "2013-12-15"
   changes:

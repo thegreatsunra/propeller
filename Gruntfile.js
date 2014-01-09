@@ -1,10 +1,28 @@
-module.exports = function(grunt) {
-  'use strict';
+// Generated using generator-propeller 0.3.3
+'use strict';
 
+// # Globbing
+// for performance reasons we're only matching one level down:
+// 'test/spec/{,*/}*.js'
+// use this if you want to recursively match all subfolders:
+// 'test/spec/**/*.js'
+
+module.exports = function (grunt) {
+
+  // Load grunt tasks automatically
+  require('load-grunt-tasks')(grunt);
+
+  // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
   grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
+
+    // Project settings
+    yeoman: {
+      // configurable paths
+      app: require('./bower.json').appPath || 'app',
+      dist: 'dist'
+    },
 
     // define variables for Gruntfile
     config: {
@@ -16,9 +34,142 @@ module.exports = function(grunt) {
       cssFolder:        'app/css',
       imgFolder:        'app/img',
       dataFolder:       'app/data',
+      fontsFolder:      'app/fonts',
       cssMainFile:      'styles',
       jsMainFile:       'scripts'
     },
+
+    // watch for file changes and run tasks in response
+    watch: {
+      js: {
+        files: ['<%= config.src %>/<%= config.jsFolder %>/{,*/}*.js'],
+        tasks: ['newer:jshint', 'newer:copy:dist'],
+        options: {
+          livereload: true
+        }
+      },
+      less: {
+        files: ['<%= config.src %>/<%= config.cssFolder %>/{,*/}*.{css,less}'],
+        tasks: ['less']
+      },
+      gruntfile: {
+        files: ['Gruntfile.js']
+      },
+      pages: {
+        files: ['<%= config.src %>/assemble/pages/{,*/}*.hbs'],
+        tasks: ['newer:assemble']
+      },
+      assemble: {
+        files: ['<%= config.src %>/assemble/{helpers,layouts,partials}/{,*/}*.{hbs,yml,json,js}'],
+        tasks: ['assemble']
+      },
+      data: {
+        files: ['<%= config.src %>/<%= config.dataFolder %>/{,*/}*.csv'],
+        tasks: ['newer:convert', 'newer:assemble', 'newer:copy:dist']
+      },
+      livereload: {
+        options: {
+          livereload: '<%= connect.options.livereload %>'
+        },
+        files: [
+          '<%= config.dist %>/{,*/}*.html',
+          '<%= config.dist %>/<%= config.cssFolder %>/{,*/}*.css',
+          '<%= config.dist %>/<%= config.jsFolder %>/{,*/}*.js',
+          '<%= config.dist %>/<%= config.dataFolder %>/{,*/}*.csv',
+          '<%= config.dist %>/<%= config.imgFolder %>/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+        ]
+      }
+    },
+
+    // The actual grunt server settings
+    connect: {
+      options: {
+        port: 9000,
+        // Change this to '0.0.0.0' to access the server from outside.
+        hostname: 'localhost',
+        livereload: 35729
+      },
+      livereload: {
+        options: {
+          open: true,
+          base: [
+            '<%= config.dist %>'
+          ]
+        }
+      },
+      dist: {
+        options: {
+          base: '<%= config.dist %>'
+        }
+      }
+    },
+
+    // Make sure code styles are up to par and there are no obvious mistakes
+    jshint: {
+      options: {
+        jshintrc: '.jshintrc',
+        reporter: require('jshint-stylish'),
+        force: true
+      },
+      all: [
+        'Gruntfile.js',
+        '<%= config.src %>/<%= config.jsFolder %>/{,*/}*.js'
+      ],
+    },
+
+    // Empties folders to start fresh
+    clean: {
+      dist: {
+        files: [{
+          dot: true,
+          src: [
+            '.tmp',
+            '<%= config.dist %>/*',
+            '!<%= yeoman.dist %>/.git*',
+            '<%= config.src %>/assemble/<%= config.dataFolder %>/*.json'
+          ]
+        }]
+      },
+      server: '.tmp'
+    },
+
+    // Copies remaining files to places other tasks can use
+    copy: {
+      dist: {
+        files: [{
+          expand: true,
+          dot: true,
+          cwd: '<%= config.src %>',
+          dest: '<%= config.dist %>',
+          src: [
+            '*.{ico,png,txt,xml}',
+            '.htaccess',
+            '*.html',
+            'views/{,*/}*.html',
+            '<%= config.componentsFolder %>/**/*',
+            '<%= config.imgFolder %>/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+            '<%= config.fontsFolder %>/*',
+            '<%= config.dataFolder %>/{,*/}*',
+            '<%= config.jsFolder %>/{,*/}*.js'
+          ]
+        }]
+      }
+    },
+
+    // Run some tasks in parallel to speed up the build process
+    // concurrent: {
+    //   server: [
+    //     'copy:styles'
+    //   ],
+    //   test: [
+    //     'copy:styles'
+    //   ],
+    //   dist: [
+    //     'copy:styles',
+    //     'imagemin',
+    //     'svgmin'
+    //   ]
+    // },
 
     // concat all javascripts into a single file
     concat: {
@@ -26,7 +177,7 @@ module.exports = function(grunt) {
         separator: ';'
       },
       dist: {
-        src: ['<%= config.src %>/<%= config.jsFolder %>/**/*.js'],
+        src: ['<%= config.src %>/<%= config.jsFolder %>/{,*/}*.js'],
         dest: '<%= config.dist %>/<%= config.jsFolder %>/<%= config.jsMainFile %>.js'
       }
     },
@@ -41,77 +192,6 @@ module.exports = function(grunt) {
           '<%= config.dist %>/<%= config.jsFolder %>/<%= config.jsMainFile %>.min.js': ['<%= concat.dist.dest %>']
         }
       }
-    },
-
-    // run jshint against all javascripts, including Gruntfile
-    jshint: {
-      files: ['Gruntfile.js', '<%= config.src %>/<%= config.jsFolder %>/**/*.js']
-    },
-
-    // copy assets into root of destination
-    copy: {
-      data: {
-        files: [
-          {
-            expand: true,
-            cwd: '<%= config.src %>/<%= config.dataFolder %>',
-            src: '**',
-            dest: '<%= config.dist %>/<%= config.dataFolder %>',
-          }
-        ]
-      },
-
-      img: {
-        files: [
-          {
-            expand: true,
-            cwd: '<%= config.src %>/<%= config.imgFolder %>',
-            src: '**',
-            dest: '<%= config.dist %>/<%= config.imgFolder %>',
-          }
-        ]
-      },
-
-      js: {
-        files: [
-          {
-            expand: true,
-            cwd: '<%= config.src %>/<%= config.jsFolder %>',
-            src: '**/*.js',
-            dest: '<%= config.dist %>/<%= config.jsFolder %>',
-          }
-        ]
-      },
-
-      src: {
-        files: [
-          {
-            expand: true,
-            cwd: '<%= config.src %>/',
-            src: ['*', '!assemble'],
-            dest: '<%= config.dist %>/',
-            dot: true
-          }
-        ]
-      },
-
-      // copy bower components as well
-      components: {
-        files: [
-          {
-            expand: true,
-            cwd: '<%= config.src %>/<%= config.componentsFolder %>',
-            src: '**',
-            dest: '<%= config.dist %>/<%= config.componentsFolder %>',
-            dot: true
-          }
-        ]
-      }
-    },
-
-    // clean out destination folder by brute force
-    clean: {
-      main: ['<%= config.dist %>/**/*', '<%= config.dist %>/.*', '<%= config.src %>/assemble/<%= config.dataFolder %>/*.json'],
     },
 
     // compile all non-partial LESS files into CSS
@@ -151,35 +231,17 @@ module.exports = function(grunt) {
     assemble: {
       options: {
         plugins: ['assemble-contrib-permalinks'],
-        helpers: ['<%= config.src %>/assemble/helpers/**/*.js']
+        helpers: ['<%= config.src %>/assemble/helpers/{,*/}*.js']
       },
       pages: {
         options: {
           flatten: true,
           layout: '<%= config.src %>/assemble/layouts/default.hbs',
-          data: '<%= config.src %>/assemble/data/**/*.{json,yml}',
-          partials: '<%= config.src %>/assemble/partials/**/*.hbs'
+          data: '<%= config.src %>/assemble/data/{,*/}*.{json,yml}',
+          partials: '<%= config.src %>/assemble/partials/{,*/}*.hbs'
         },
         files: {
-          '<%= config.dist %>/': ['<%= config.src %>/assemble/pages/**/*.hbs']
-        }
-      }
-    },
-
-    // create connect server
-    connect: {
-      options: {
-        port: 9000,
-        livereload: 35729,
-        // change this to '0.0.0.0' to access the server from outside
-        hostname: 'localhost'
-      },
-      livereload: {
-        options: {
-          open: true,
-          base: [
-            '<%= config.dist %>'
-          ]
+          '<%= config.dist %>/': ['<%= config.src %>/assemble/pages/{,*/}*.hbs']
         }
       }
     },
@@ -197,64 +259,34 @@ module.exports = function(grunt) {
           }
         ]
       }
-    },
-
-    // watch for file changes and run tasks in response
-    watch: {
-      js: {
-        files: ['<%= jshint.files %>'],
-        tasks: ['jshint', 'copy:js']
-      },
-      assemble: {
-        files: ['<%= config.src %>/assemble/**/*.{hbs,yml,json}'],
-        tasks: ['assemble']
-      },
-      less: {
-        files: ['<%= config.src %>/<%= config.cssFolder %>/**/*.{css,less}'],
-        tasks: ['less']
-      },
-      data: {
-        files: ['<%= config.src %>/<%= config.dataFolder %>/**/*.csv'],
-        tasks: ['convert', 'copy:data']
-      },
-      livereload: {
-        options: {
-          livereload: '<%= connect.options.livereload %>'
-        },
-        files: [
-          '<%= config.dist %>/**/*.html',
-          '<%= config.dist %>/<%= config.cssFolder %>/**/*.css',
-          '<%= config.dist %>/<%= config.jsFolder %>/**/*.js',
-          '<%= config.dist %>/<%= config.dataFolder %>/**/*.csv'
-        ]
-      }
-    },
+    }
   });
-
-  // automatically load all grunt-* tasks in --save-dev
-  require('load-grunt-tasks')(grunt);
 
   // load assemble manually because it doesn't match the grunt-* pattern
   grunt.loadNpmTasks('assemble');
 
-  // create build task
+  // create server task
+  grunt.registerTask('serve', [
+    'connect:livereload',
+    'watch'
+  ]);
+
+  grunt.registerTask('server', function () {
+    grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
+    grunt.task.run(['serve']);
+  });
+
   grunt.registerTask('build', [
     'clean',
     'convert',
-    'less', 
-    'jshint', 
+    'less',
+    'jshint',
     'copy',
     'assemble'
   ]);
 
-  // create server task
-  grunt.registerTask('server', [
-    'connect',
-    'watch'
-  ]);
-
   // set default grunt task
   grunt.registerTask('default', [
-    'server'
+    'build'
   ]);
 };

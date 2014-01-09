@@ -1,3 +1,11 @@
+v0.5.2:
+  date: "2014-01-09"
+  changes:
+    - Fix NPM registry listing
+v0.5.1:
+  date: "2014-01-09"
+  changes:
+    - Update README with latest Grunt tasks
 v0.5.0:
   date: "2014-01-09"
   changes:

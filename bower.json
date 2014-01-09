@@ -1,7 +1,7 @@
 {
   "name": "propeller",
   "description": "Static Site Generator in Assemble and Bootstrap 3",
-  "version": "0.5.0",
+  "version": "0.5.2",
   "homepage": "http://propellerjs.com",
   "authors": [
     "Dane Petersen"

@@ -2,22 +2,8 @@ define([
   'jquery',
   'knockout',
   'csv-js'
-  ], function ($, ko, CSV) {
+], function ($, ko, CSV) {
   'use strict';
-
-  // Here's my data model
-  var ViewModel = function(first, last) {
-    var self = this;
-    self.places = ko.observable(new CSVtoJSON('places'));
-    self.firstName = ko.observable(first);
-    self.lastName = ko.observable(last);
-  
-    self.fullName = ko.computed(function() {
-      // Knockout tracks dependencies automatically. It knows that fullName depends on firstName and lastName, because these get called when evaluating fullName.
-      return self.firstName() + " " + self.lastName();
-    }, self);
-  };
-  return ViewModel;
 
   function CSVtoJSON(data) {
     var dataPath = 'app/data/',
@@ -35,4 +21,18 @@ define([
     });
     return output;
   }
+  
+  // Here's my data model
+  var ViewModel = function(first, last) {
+    var self = this;
+    self.places = ko.observable(new CSVtoJSON('places'));
+    self.firstName = ko.observable(first);
+    self.lastName = ko.observable(last);
+  
+    self.fullName = ko.computed(function() {
+      // Knockout tracks dependencies automatically. It knows that fullName depends on firstName and lastName, because these get called when evaluating fullName.
+      return self.firstName() + ' ' + self.lastName();
+    }, self);
+  };
+  return ViewModel;
 });

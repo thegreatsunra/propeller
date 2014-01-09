@@ -12,6 +12,6 @@ require.config({
     viewmodel: 'app/js/viewmodel'
   },
   shim: {
-  bootstrap: {deps: ['jquery']}
+    bootstrap: {deps: ['jquery']}
   }
 });

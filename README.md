@@ -5,12 +5,12 @@ Static site generator in [Assemble](http://assemble.io) and [Bootstrap 3](http:/
 ## Quick Start
 
 1. Download and install [Node](http://nodejs.org)
-1. At the command line install [Bower](http://bower.io) and [Grunt](http://gruntjs.com)  globally by typing `sudo npm install -g bower grunt-cli`
+1. At the command line install [Bower](http://bower.io) and [Grunt](http://gruntjs.com) globally by typing `sudo npm install -g bower grunt-cli`
 1. Download and unzip (or clone) Propeller
 1. Open the unzipped folder at the command line
 1. Type `npm install && bower install` to install all dependencies
-1. Type `grunt build` to generate the static site
-1. Type `grunt` to start the development server and watch for changes
+1. Type `grunt` to generate the static site
+1. Type `grunt serve` to start the development server and watch for changes
 1. Open [http://localhost:9000](http://localhost:9000) in your web browser to view the site
 
 ## Additional Information

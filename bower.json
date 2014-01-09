@@ -1,11 +1,11 @@
 {
   "name": "propeller",
+  "description": "Static Site Generator in Assemble and Bootstrap 3",
   "version": "0.4.3",
   "homepage": "http://propellerjs.com",
   "authors": [
     "Dane Petersen"
   ],
-  "description": "Static Site Generator in Assemble and Bootstrap 3",
   "license": "MIT",
   "ignore": [
     "**/.*",
@@ -22,7 +22,7 @@
     "knockout.js": "~3.0.0",
     "lesshat": "~2.0.13",
     "lodash": "~2.4.1",
-    "moment": "~2.4.0",
+    "moment": "~2.5.0",
     "requirejs": "~2.1.9"
   }
 }

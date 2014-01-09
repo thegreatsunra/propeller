@@ -1,3 +1,21 @@
+v0.5.0:
+  date: "2014-01-09"
+  changes:
+    - From now on, propeller and propeller-generator share version numbers
+    - Add .htaccess file and other helpful dot files
+    - Add empty fonts folder
+    - Fix character encodings in csv files
+    - Fix jshint whitespace and single-quoted string errors in JS files
+    - Scope watch copy tasks to copy:dist task
+    - Add assemble helpers to list of watched files
+    - Only run jshint on changed files
+    - Only run assemble on newer pages when pages are changed
+    - Run assemble on all pages when layouts, helpers and partials are changed
+    - Align templates, dotfiles and Gruntfile with generator-angular 0.7.1
+    - When globbing, only match one level down by default
+    - Default grunt task is now `grunt build`
+    - Grunt task to start server is now available via `grunt server` and `grunt serve`
+    - Bump versions on grunt-contrib-copy, grunt-contrib-jshint, grunt-contrib-connect, grunt-newer, and MomentJS
 v0.4.3:
   date: "2013-12-16"
   changes:

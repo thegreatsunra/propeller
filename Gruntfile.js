@@ -1,4 +1,4 @@
-// Generated using generator-propeller 0.3.3
+// Generated using generator-propeller 0.5.0
 'use strict';
 
 // # Globbing

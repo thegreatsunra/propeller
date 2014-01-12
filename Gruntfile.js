@@ -231,7 +231,8 @@ module.exports = function (grunt) {
     assemble: {
       options: {
         plugins: ['assemble-contrib-permalinks'],
-        helpers: ['<%= config.src %>/assemble/helpers/{,*/}*.js']
+        helpers: ['<%= config.src %>/assemble/helpers/{,*/}*.js'],
+        postprocess: require('pretty')
       },
       pages: {
         options: {

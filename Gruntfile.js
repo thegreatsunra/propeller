@@ -61,7 +61,7 @@ module.exports = function (grunt) {
       },
       assemble: {
         files: ['<%= config.src %>/assemble/{helpers,layouts,partials}/{,*/}*.{hbs,yml,json,js}'],
-        tasks: ['assemble']
+        tasks: ['newer:assemble']
       },
       data: {
         files: ['<%= config.src %>/<%= config.dataFolder %>/{,*/}*.csv'],

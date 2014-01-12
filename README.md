@@ -1,17 +1,21 @@
-# Propeller
+# propeller 0.5.2
 
 Static site generator in [Assemble](http://assemble.io) and [Bootstrap 3](http://getbootstrap.com) using [Handlebars](http://handlebarsjs.com) templates, with additional support for [RequireJS](http://requirejs.org), [Knockout](http://knockoutjs.com), [Moment.js](http://momentjs.com), [D3](http://d3js.org) and CSV parsing.
 
-## Quick Start
+## Getting started
 
 1. Download and install [Node](http://nodejs.org)
-1. At the command line install [Bower](http://bower.io) and [Grunt](http://gruntjs.com) globally by typing `sudo npm install -g bower grunt-cli`
-1. Download and unzip (or clone) Propeller
-1. Open the unzipped folder at the command line
-1. Type `npm install && bower install` to install all dependencies
-1. Type `grunt` to generate the static site
-1. Type `grunt serve` to start the development server and watch for changes
-1. Open [http://localhost:9000](http://localhost:9000) in your web browser to view the site
+1. At the command line install [Yeoman](http://yeoman.io), [Bower](http://bower.io) and [Grunt](http://gruntjs.com) globally by typing `sudo npm install -g yo bower grunt-cli`
+1. Clone, download and unzip, or use [generator-propeller](http://github.com/thegreatsunra/generator-propeller) to create a new Propeller project
+
+### Now you're ready to use Propeller
+
+1. Open your new Propeller project at the command line
+1. Type `npm install && bower install` to make sure all dependencies are installed
+1. Type `grunt` at the command line to run the tasks to generate your static site, which will appear in a `/dist` folder in your project
+1. Type `grunt serve` to start your development server. Propeller will monitor the files in the `/src` folder and update your static site whenever it detects changes
+1. Open [http://localhost:9000](http://localhost:9000) in a web browser to view your site
+1. Begin creating your site by modifying the files in the `/src` folder
 
 ## Additional Information
 
@@ -19,11 +23,18 @@ Static site generator in [Assemble](http://assemble.io) and [Bootstrap 3](http:/
 * When the server is running it monitors for file updates, and automatically regenerates the static files
 * The server also monitors for changes to [LESS](http://lesscss.org) files, and automatically compiles them into static CSS files when updated
 
+## Resources
+* [propeller](http://propellerjs.com)
+* [assemble](http://assemble.io)
+* [yeoman](http://yeoman.io)
+* [bower](http://bower.io)
+* [grunt](http://gruntjs.com)
+
 ## License
 
 The MIT License (MIT)
 
-Copyright (c) 2013 Dane Petersen
+Copyright (c) 2014 Dane Petersen
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

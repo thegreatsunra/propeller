@@ -8,7 +8,7 @@ require([
   require([
     'd3',
     'lodash'
-  ], function(){
+  ], function(d3){
     // this is where the code goes
 
     // D3 code sample from

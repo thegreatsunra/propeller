@@ -1,7 +1,6 @@
 <!-- All JavaScript via RequireJS -->
 <script data-main="{{site.jsFolder}}/require.config.js" src="{{site.componentsFolder}}/requirejs/require.js"></script>
 <script src="{{site.jsFolder}}/{{site.jsMainFile}}.js"></script>
-
 {{#if page.scripts}}
   {{#each page.scripts}}
     <script src="{{../../site.jsFolder}}/{{.}}.js"></script>

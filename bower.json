@@ -15,12 +15,12 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "~3.0.3",
+    "bootstrap": "~3.1.0",
     "csv-js": "https://github.com/cparker15/CSV-js.git#~0.2.5",
     "d3": "~3.4.0",
     "jquery": "~1.10.2",
     "knockout.js": "~3.0.0",
-    "lesshat": "~2.0.13",
+    "lesshat": "~2.0.15",
     "lodash": "~2.4.1",
     "moment": "~2.5.0",
     "requirejs": "~2.1.9"

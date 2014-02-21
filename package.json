@@ -18,7 +18,7 @@
     "url": "https://github.com/thegreatsunra/propeller/issues"
   },
   "devDependencies": {
-    "assemble": "~0.4.35",
+    "assemble": "~0.4.36",
     "assemble-contrib-permalinks": "~0.3.4",
     "csvtojson": "~0.1.7",
     "grunt": "~0.4.2",

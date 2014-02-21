@@ -17,12 +17,12 @@
   "dependencies": {
     "bootstrap": "~3.1.1",
     "csv-js": "https://github.com/cparker15/CSV-js.git#~0.2.5",
-    "d3": "~3.4.0",
+    "d3": "~3.4.2",
     "jquery": "~1.11.0",
     "knockout.js": "~3.0.0",
     "lesshat": "~2.0.15",
     "lodash": "~2.4.1",
     "moment": "~2.5.1",
-    "requirejs": "~2.1.9"
+    "requirejs": "~2.1.11"
   }
 }

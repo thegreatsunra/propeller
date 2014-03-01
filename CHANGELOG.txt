@@ -1,3 +1,9 @@
+v0.5.6:
+  date: "2014-02-28"
+  changes:
+    - Remove IE debugging code from layout template
+    - Bump versions on assemble, assemble-contrib-permalinks, csvtojson, grunt-contrib-connect, grunt-convert, load-grunt-tasks, time-grunt
+    - Bump Bootstrap version to 3.1.1, D3 to 3.4.3, jQuery to 1.11.0, RequireJS to 2.1.11
 v0.5.5:
   date: "2014-02-05"
   changes:

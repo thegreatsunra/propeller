@@ -37,7 +37,7 @@
     "load-grunt-tasks": "~0.4.0",
     "lodash": "~2.4.0",
     "pretty": "0.1.2",
-    "time-grunt": "~0.2.9"
+    "time-grunt": "~0.2.10"
   },
   "engines": {
     "node": ">=0.10.0"

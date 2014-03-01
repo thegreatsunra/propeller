@@ -1,7 +1,7 @@
 require.config({
   baseUrl: '',
   paths: {
-    jquery: 'app/components/jquery/jquery',
+    jquery: 'app/components/jquery/dist/jquery',
     bootstrap: 'app/components/bootstrap/dist/js/bootstrap',
     knockout: 'app/components/knockout.js/knockout.debug',
     'csv-js': 'app/components/csv-js/src/csv',

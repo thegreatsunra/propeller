@@ -64,7 +64,7 @@ module.exports = function (grunt) {
         tasks: ['newer:assemble']
       },
       yml: {
-        files: ['<%= config.src %>/assemble/data/*.yml'],
+        files: ['<%= config.src %>/assemble/data/{,*/}*.yml'],
         tasks: ['newer:convert', 'newer:assemble']
       },
       data: {

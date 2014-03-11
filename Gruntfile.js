@@ -63,6 +63,10 @@ module.exports = function (grunt) {
         files: ['<%= config.src %>/assemble/{helpers,layouts,partials}/{,*/}*.{hbs,yml,json,js}'],
         tasks: ['newer:assemble']
       },
+      yml: {
+        files: ['<%= config.src %>/assemble/data/*.yml'],
+        tasks: ['newer:convert', 'newer:assemble']
+      },
       data: {
         files: ['<%= config.src %>/<%= config.dataFolder %>/{,*/}*.csv'],
         tasks: ['newer:convert', 'newer:assemble', 'newer:copy:dist']

@@ -1,3 +1,8 @@
+v0.5.7:
+  date: "2014-05-16"
+  changes:
+    - Bump versions on assemble, assemble-contrib-permalinks, csvtojson, grunt, grunt-concurrent, grunt-contrib-concat, grunt-contrib-jshint, grunt-contrib-less, grunt-contrib-uglify, grunt-contrib-watch, grunt-convert, grunt-newer, jshint-stylish, time-grunt
+    - Bump versions on d3, lesshat, jquery, moment
 v0.5.6:
   date: "2014-02-28"
   changes:

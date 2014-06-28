@@ -1,3 +1,11 @@
+v0.5.8:
+  date: "2014-06-27"
+  changes:
+    - Bump versions on Bootstrap, Lesshat, Moment, D3, Knockout, RequireJS
+    - Bump jQuery from 1.11.1 to 2.1.1
+    - Bump versions on assemble, csvtojson, grunt-contrib-connect, grunt-contrib-less,
+grunt-contrib-uglify, load-grunt-tasks
+    - Use assemble-middleware-permalinks instead of assemble-contrib-permalinks
 v0.5.7:
   date: "2014-05-16"
   changes:

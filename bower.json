@@ -17,7 +17,7 @@
   "dependencies": {
     "bootstrap": "~3.2.0",
     "csv-js": "https://github.com/cparker15/CSV-js.git#~0.2.5",
-    "d3": "~3.4.8",
+    "d3": "~3.4.11",
     "jquery": "~2.1.1",
     "knockout.js": "~3.1.0",
     "lesshat": "~3.0.2",

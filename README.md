@@ -34,7 +34,7 @@ Static site generator in [Assemble](http://assemble.io) and [Bootstrap 3](http:/
 
 The MIT License (MIT)
 
-Copyright (c) 2014 Dane Petersen
+Copyright (c) 2016 Dane Petersen
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

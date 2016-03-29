@@ -1,0 +1,45 @@
+/*---------------------------------------------------
+  static.css
+  ---------------------------------------------------*/
+
+/* 
+  Propeller will copy any CSS files in this folder
+  and generate minified versions of them as well.
+  
+  CSS files in nested folders will be handled as well.
+*/
+
+.navigation {
+  list-style: none;
+}
+
+.navigation li {
+  display: inline;
+}
+
+.navigation a {
+  font-size: 24px;
+}
+
+a {
+  border-radius: 4px;
+  color: #fff;
+  text-decoration: none;
+  background-color: #66c;
+  display: inline-block;
+  margin: 2px;
+  padding: 10px 15px 10px 15px;
+  transition: background-color 250ms ease-in;
+}
+
+a:hover {
+  background-color: #339;
+}
+
+li.active a {
+  background-color: #c66;
+}
+
+li.active a:hover {
+  background-color: #933;
+}

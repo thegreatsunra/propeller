@@ -2,80 +2,22 @@
 title: "Home"
 slug: "home"
 scripts:
-  - "d3_example"
-  - "jquery_example"
-  - "knockout_example"
-  - "moment_example"
+  - "home"
 styles: 
-  - "static"
+  - "home"
 ---
 
-<h1>This is the {{propeller page.title}} screen.</h1>
-
-<h3>Knockout example with data-binding:</h3>
-
-<h2>Hello, <span data-bind="text: fullName"></span>!</h2>
-
-<p>First name: <input data-bind="value: firstName"></p>
-<p>Last name: <input data-bind="value: lastName"></p>
+<p><em>The above header is red because home.css, a CSS file unique for this page, has been loaded.</em></p>
+<!-- find it at src/app/css/home.css -->
 
 <hr>
 
-<h3>Back-end loop from CSV file with Assemble and Handlebars:</h3>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Location</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each people}}
-      <tr>
-        <td>{{propeller this.first_name}} {{propeller this.last_name}}</td>
-        <td>{{this.city}}, {{this.state}}</td>
-      </tr>
-    {{/each}}
-  </tbody>
-</table>
+<h3>This is the {{page.title}} screen.</h3>
+
+<p>If you open the JavaScript console you'll see a message for this page.</p>
 
 <hr>
 
-<h3>Front-end loop from CSV file with Knockout:</h3>
-<p>This example requires a web server due to Access-Control-Allow-Origin policies. Double-clicking the dist/index.html file will not work.</p>
-<table class="table table-striped">
-  <thead>
-    <tr><th>City</th><th>Country</th></tr>
-  </thead>
-  <tbody data-bind="foreach: places">
-    <tr>
-      <td data-bind="text: city"></td>
-      <td data-bind="text: country"></td>
-    </tr>
-  </tbody>
-</table>
-
-<hr>
-
-<h3>Append text with jQuery:</h3>
+<h3>The content below has been appended by jQuery:</h3>
 <p class="lead"></p>
-
-<hr>
-
-<h3>Import data from CSV, sort with Lo-Dash, and render with D3:</h3>
-<p>This example requires a web server due to Access-Control-Allow-Origin policies. Double-clicking the dist/index.html file will not work.</p>
-<p id="d3-target"></p>
-
-<hr>
-
-<h3>Render date with Moment:</h3>
-<p id="moment-target"></p>
-
-<hr>
-
-<h3>Toggle Bootstrap modal:</h3>
-
-<!-- Button trigger modal -->
-<p><a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Launch demo modal</a></p>
-
-{{> bootstrap_modal}}
+<!-- find this javascript at src/app/js/scripts.js -->

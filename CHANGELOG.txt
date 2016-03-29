@@ -1,3 +1,11 @@
+v0.6.0:
+  date: "2016-03-29"
+  changes:
+    - Bump versions on bower components
+    - Bump versions on node packages
+    - use grunt-assemble instead of assemble
+    - remove favicon
+    - Dust off this old friend for a friend
 v0.5.8:
   date: "2014-06-27"
   changes:

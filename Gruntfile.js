@@ -273,9 +273,6 @@ module.exports = function (grunt) {
     }
   });
 
-  // load assemble manually because it doesn't match the grunt-* pattern
-  grunt.loadNpmTasks('assemble');
-
   // create server task
   grunt.registerTask('serve', [
     'connect:livereload',

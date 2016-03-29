@@ -8,3 +8,7 @@
   
   CSS files in nested folders will be handled as well.
 */
+
+h1 {
+  color: #f00;
+}

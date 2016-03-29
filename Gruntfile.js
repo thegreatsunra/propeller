@@ -48,10 +48,6 @@ module.exports = function (grunt) {
           livereload: true
         }
       },
-      less: {
-        files: ['<%= config.src %>/<%= config.cssFolder %>/{,*/}*.{css,less}'],
-        tasks: ['less']
-      },
       gruntfile: {
         files: ['Gruntfile.js']
       },
@@ -67,9 +63,6 @@ module.exports = function (grunt) {
         files: ['<%= config.src %>/assemble/data/{,*/}*.yml'],
         tasks: ['newer:convert', 'newer:assemble']
       },
-      data: {
-        files: ['<%= config.src %>/<%= config.dataFolder %>/{,*/}*.csv'],
-        tasks: ['newer:convert', 'newer:assemble', 'newer:copy:dist']
       },
       img: {
         files: ['<%= config.src %>/<%= config.imgFolder %>/{,*/}*'],
@@ -166,21 +159,6 @@ module.exports = function (grunt) {
       }
     },
 
-    // Run some tasks in parallel to speed up the build process
-    // concurrent: {
-    //   server: [
-    //     'copy:styles'
-    //   ],
-    //   test: [
-    //     'copy:styles'
-    //   ],
-    //   dist: [
-    //     'copy:styles',
-    //     'imagemin',
-    //     'svgmin'
-    //   ]
-    // },
-
     // concat all javascripts into a single file
     concat: {
       options: {
@@ -204,46 +182,8 @@ module.exports = function (grunt) {
       }
     },
 
-    // compile all non-partial LESS files into CSS
-    // and copy all CSS files into their appropriate location as well
-    less: {
-      development: {
-        options: {
-          compress: false
-        },
-        files: [
-          {
-            expand: true,
-            cwd: '<%= config.src %>/<%= config.cssFolder %>/',
-            src: ['**/*.{less,css}', '!_*'],
-            dest: '<%= config.dist %>/<%= config.cssFolder %>/',
-            ext: '.css'
-          }
-        ]
-      },
-      production: {
-        options: {
-          compress: true
-        },
-        files: [
-          {
-            expand: true,
-            cwd: '<%= config.src %>/<%= config.cssFolder %>/',
-            src: ['**/*.{less,css}', '!_*'],
-            dest: '<%= config.dist %>/<%= config.cssFolder %>/',
-            ext: '.min.css'
-          }
-        ]
-      }
-    },
-
     // Use Assemble to generate all HTML pages
     assemble: {
-      options: {
-        plugins: ['assemble-contrib-permalinks'],
-        helpers: ['<%= config.src %>/assemble/helpers/{,*/}*.js']
-        // postprocess: require('pretty')
-      },
       pages: {
         options: {
           flatten: true,
@@ -254,21 +194,6 @@ module.exports = function (grunt) {
         files: {
           '<%= config.dist %>/': ['<%= config.src %>/assemble/pages/{,*/}*.hbs']
         }
-      }
-    },
-
-    // convert all CSV files into JSON files for Assemble
-    convert: {
-      csvs: {
-        files: [
-          {
-            expand: true,
-            cwd: '<%= config.src %>/<%= config.dataFolder %>/',
-            src: ['**/*.csv'],
-            dest: '<%= config.src %>/assemble/data/',
-            ext: '.json'
-          }
-        ]
       }
     }
   });
@@ -286,8 +211,6 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean',
-    'convert',
-    'less',
     'jshint',
     'copy',
     'assemble'

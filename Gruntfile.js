@@ -42,8 +42,8 @@ module.exports = function (grunt) {
     // watch for file changes and run tasks in response
     watch: {
       js: {
-        files: ['<%= config.src %>/<%= config.jsFolder %>/{,*/}*.js'],
-        tasks: ['newer:jshint', 'newer:copy:dist'],
+        files: ['<%= config.src %>/<%= config.jsFolder %>/**/*.js'],
+        tasks: ['jshint', 'copy:dist'],
         options: {
           livereload: true
         }
@@ -52,33 +52,35 @@ module.exports = function (grunt) {
         files: ['Gruntfile.js']
       },
       pages: {
-        files: ['<%= config.src %>/assemble/pages/{,*/}*.hbs'],
-        tasks: ['newer:assemble']
+        files: ['<%= config.src %>/assemble/pages/**/*.hbs'],
+        tasks: ['assemble']
       },
       assemble: {
-        files: ['<%= config.src %>/assemble/{helpers,layouts,partials}/{,*/}*.{hbs,yml,json,js}'],
-        tasks: ['newer:assemble']
+        files: ['<%= config.src %>/assemble/{helpers,layouts,partials}/**/*.{hbs,yml,json,js}'],
+        tasks: ['assemble']
       },
       yml: {
-        files: ['<%= config.src %>/assemble/data/{,*/}*.yml'],
-        tasks: ['newer:convert', 'newer:assemble']
+        files: ['<%= config.src %>/assemble/*.yml'],
+        tasks: ['assemble']
       },
+      css: {
+        files: ['<%= config.src %>/<%= config.cssFolder %>/**/*'],
+        tasks: ['copy:dist']
       },
       img: {
-        files: ['<%= config.src %>/<%= config.imgFolder %>/{,*/}*'],
-        tasks: ['newer:copy:dist']
+        files: ['<%= config.src %>/<%= config.imgFolder %>/**/*'],
+        tasks: ['copy:dist']
       },
       livereload: {
         options: {
           livereload: '<%= connect.options.livereload %>'
         },
         files: [
-          '<%= config.dist %>/{,*/}*.html',
-          '<%= config.dist %>/<%= config.cssFolder %>/{,*/}*.css',
-          '<%= config.dist %>/<%= config.jsFolder %>/{,*/}*.js',
-          '<%= config.dist %>/<%= config.fontsFolder %>/{,*/}*',
-          '<%= config.dist %>/<%= config.dataFolder %>/{,*/}*.csv',
-          '<%= config.dist %>/<%= config.imgFolder %>/{,*/}*'
+          '<%= config.dist %>/**/*.html',
+          '<%= config.dist %>/<%= config.cssFolder %>/**/*.css',
+          '<%= config.dist %>/<%= config.jsFolder %>/**/*.js',
+          '<%= config.dist %>/<%= config.fontsFolder %>/**/*',
+          '<%= config.dist %>/<%= config.imgFolder %>/**/*'
         ]
       }
     },
@@ -115,7 +117,7 @@ module.exports = function (grunt) {
       },
       all: [
         'Gruntfile.js',
-        '<%= config.src %>/<%= config.jsFolder %>/{,*/}*.js'
+        '<%= config.src %>/<%= config.jsFolder %>/**/*.js'
       ],
     },
 
@@ -127,8 +129,7 @@ module.exports = function (grunt) {
           src: [
             '.tmp',
             '<%= config.dist %>/*',
-            '!<%= yeoman.dist %>/.git*',
-            '<%= config.src %>/assemble/<%= config.dataFolder %>/*.json'
+            '!<%= yeoman.dist %>/.git*'
           ]
         }]
       },
@@ -147,13 +148,13 @@ module.exports = function (grunt) {
             '*.{ico,png,txt,xml}',
             '.htaccess',
             '*.html',
-            'views/{,*/}*.html',
+            'views/**/*.html',
             '<%= config.componentsFolder %>/**/*',
-            '<%= config.imgFolder %>/{,*/}*',
-            '<%= config.fontsFolder %>/{,*/}*',
-            '<%= config.dataFolder %>/{,*/}*',
-            '<%= config.imgFolder %>/{,*/}*',
-            '<%= config.jsFolder %>/{,*/}*.js'
+            '<%= config.cssFolder %>/**/*',
+            '<%= config.imgFolder %>/**/*',
+            '<%= config.fontsFolder %>/**/*',
+            '<%= config.imgFolder %>/**/*',
+            '<%= config.jsFolder %>/**/*.js'
           ]
         }]
       }
@@ -165,7 +166,7 @@ module.exports = function (grunt) {
         separator: ';'
       },
       dist: {
-        src: ['<%= config.src %>/<%= config.jsFolder %>/{,*/}*.js'],
+        src: ['<%= config.src %>/<%= config.jsFolder %>/**/*.js'],
         dest: '<%= config.dist %>/<%= config.jsFolder %>/<%= config.jsMainFile %>.js'
       }
     },
@@ -188,11 +189,11 @@ module.exports = function (grunt) {
         options: {
           flatten: true,
           layout: '<%= config.src %>/assemble/layouts/default.hbs',
-          data: '<%= config.src %>/assemble/data/{,*/}*.{json,yml}',
-          partials: '<%= config.src %>/assemble/partials/{,*/}*.hbs'
+          data: '<%= config.src %>/assemble/*.yml',
+          partials: '<%= config.src %>/assemble/partials/**/*.hbs'
         },
         files: {
-          '<%= config.dist %>/': ['<%= config.src %>/assemble/pages/{,*/}*.hbs']
+          '<%= config.dist %>/': ['<%= config.src %>/assemble/pages/**/*.hbs']
         }
       }
     }
